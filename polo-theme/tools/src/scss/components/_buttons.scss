@@ -1,0 +1,159 @@
+//
+// Buttons
+//
+
+.btn {
+  position: relative;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+  letter-spacing: $btn-letter-spacing;
+  text-transform: $btn-text-transform;
+  + .btn {
+    margin-left: 0.5rem;
+  }
+  
+/*   &:not(.rounded-circle) > i {
+    margin-right:.5rem;
+  } */
+
+  &.desc:before {
+    content: "\e92e";
+    float: right;
+    margin-left: 6px;
+    font-family: "inspiro-icons";
+  }
+
+  &.asc:before {
+    content: "\e931";
+    float: right;
+    margin-left: 6px;
+    font-family: "inspiro-icons";
+  }
+  &.btn-white{
+    border: $input-btn-border-width solid $border-color;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: shift-color($white, 5%);
+      border-color: shift-color($white, 5%);
+    }
+  }
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-xs {
+  @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-border-radius-xs);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+
+.btn-xl {
+  @include button-size($btn-padding-y-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-border-radius-xl);
+}
+ 
+.btn-pill {
+  border-radius: 6.1875rem;
+}
+
+.rounded-circle {
+  position:relative;
+ display:inline-flex;
+ flex-shrink:0;
+ justify-content:center;
+ align-items:center;
+ font-weight:400;
+ min-width: 2.8rem;
+ min-height:2.8rem;
+}
+
+.navbar .rounded-circle {
+  min-width: 2.8rem;
+  min-height:2.8rem;
+  &:hover {
+    color: $navbar-dropdown-link-hover-color;
+    background-color: $navbar-dropdown-link-hover-bg;
+  } 
+}
+
+
+
+//Round circle polo
+ @each $color, $value in $theme-colors {
+   .rounded-circle-#{$color} {
+     @include button-variant($value, $value);
+   }
+ }
+
+
+// Soft variations
+// @each $state, $value in $theme-colors {
+//   $background: shift-color($value, $btn-soft-bg-scale);
+//   $border: shift-color($value, $btn-soft-border-scale);
+//   $color: shift-color($value, $btn-soft-color-scale);
+//   @if (contrast-ratio($background, $color) < $min-contrast-ratio) {
+//     $color: mix($value, color-contrast($background), abs($btn-soft-color-scale));
+//   }
+//   .btn-soft-#{$state} {
+//     @include btn-soft-variant($background, $border, $color);
+//   }
+// }
+
+//Transparent button style 
+.btn-transparent {  
+  background: transparent !important;
+  &:hover {
+      background: transparent !important;
+      border-color: transparent !important;
+  }  
+}      
+
+
+
+
+
+//
+// Icon button 
+//
+.btn-icon-only {
+    
+}
+
+.btn-icon {
+  display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    i {
+      margin: 0 !important;
+    }
+    
+  .btn-inner-text:not(:first-child) {
+      margin-left: .75em;
+  }
+  .btn-inner-text:not(:last-child) {
+      margin-right: .75em;
+  }
+
+  .btn-inner-icon {
+      img {
+          width: 20px;
+      }
+  }
+}
+
+.btn .badge {
+	position: absolute;
+	top: -6px;
+	right: -4px;
+}
