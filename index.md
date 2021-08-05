@@ -1,2 +1,3 @@
 ## Half ASD (Coming Soon)
-[Polo Theme](/polo-theme/)
+[Polo Theme Root](/polo-theme/)
+[Polo Theme Demo](/polo-theme/Template/)
